@@ -1,0 +1,238 @@
+---
+title: "Newbold_Brett_HW4"
+output: html_document
+---
+
+---
+#1
+---
+#### 1.a
+#### Creates the vector (1,2,3,...,20)
+```{r}
+x1 <- c(1:20) 
+x1
+```
+#### 1.b
+#### Creates the vector (20,19,...,2,1)
+```{r}
+x2 <- c(20:1)   
+x2
+```
+#### 1.c
+#### Creates the vector (1,2,3,..,19,20,19,18,...,2,1)
+```{r}
+x3 <- c(1:20,19:1)
+x3
+```
+#### 1.d
+#### Creates the vector (4,6,3) and assigns to name tmp
+```{r}
+tmp <- c(4,6,3)
+tmp
+```
+#### 1.e
+#### Repeats the vector 10 times
+```{r}
+x4 <- rep(tmp, times = 10)  
+x4
+```
+#### 1.f 
+#### Repeats the vector until the desired length (31) occurs
+```{r}
+x5 <- rep_len(tmp, 31)  
+x5
+```
+#### 1.g
+#### Creates a new vector based off the integer vector tmp, uses repetitions of each index of tmp a given amount of times
+```{r}
+x6 <- c(rep(tmp[1], each = 10), rep(tmp[2], each = 20), rep(tmp[3], each = 30))
+x6
+```
+---
+#2
+---
+
+#### 2
+#### Creates a vector (x) from 3 to 6 in increments of .1
+#### seq() for numeric arguments returns a vector
+```{r}
+x <- seq(3, 6, by = .1)
+```
+#### Creates a vector (f) for each value in the vector x inputted into the function
+```{r}
+f <- exp(x)*cos(x)
+f
+```
+
+---
+#3
+---
+#### 3
+#### Creates a vector (x1) where each entry is found by the product 
+```{r}
+x1 <- (.1 ^ seq(3, 36, by=3))*(.2 ^ seq(1, 34, by=3))
+x1
+```
+#### Creates a vector (x2) using seq() and the default by=1
+```{r}
+x2 <- 2^seq(1,25)/seq(1,25)
+x2
+```
+---
+#4
+---
+
+#### 4.a
+#### Creates the vector (1,2,3,...,99,100) 
+```{r}
+i <- c(10:100)
+```
+#### Returns the sum of all the values as i ascends from 10 to 100
+```{r}
+s <- sum(i^3 + 4*i^2)
+s
+```
+#### 4.b
+#### Creates the vector (1,2,3,...,24,25)
+```{r}
+i <- c(1:25)
+```
+#### Returns the sum of all the values as i ascends from 1 to 25
+```{r}
+s <- sum((2^i)/i + (3^i)/(i^2))
+s
+```
+
+---
+#5
+---
+
+#### 5.a
+#### Concatenates "label" term by term with the vector argument to create a character vector result, sep = " " (one space) is the default so I wont need to include it
+```{r}
+labels <- paste("label", c(1:30))
+labels
+```
+#### 5.b
+#### Concatenates "fn" term by term with the vector argument to create a character vector result, sep = "" with leave no space between fn and the integers
+```{r}
+fns <- paste("fn", c(1:30), sep = "")
+fns
+```
+
+
+---
+#6
+---
+#### 6
+#### Ensures simulated values are reproducible
+```{r}
+set.seed(50)
+```
+#### Chooses 250 integers from 0 to 999 with replacement
+```{r}
+xVec <- sample(0:999, 250, replace=T) 
+yVec <- sample(0:999, 250, replace=T)
+```
+
+#### 6.a
+#### Will need these numbers for our new vectors
+```{r}
+i <- c(1:249)
+```
+#### Creates a vector by taking the difference of each component of y and x, making sure y components are "one step ahead" 
+```{r}
+a <- yVec[i+1] - xVec[i]
+a
+```
+#### 6.b
+```{r}
+i <- c(1:249)
+```
+#### Same process as part a. cos()  will be one ahead the whole time until it reaches the last entry of xVec
+```{r}
+b <- sin(yVec[i])/cos(xVec[i+1])
+b
+```
+#### 6.c
+```{r}
+i <- c(1:248)
+```
+#### Needed to shrink the i's by one to account for i+2 ending at 250
+```{r}
+c <- xVec[i] + 2*xVec[i+1] - xVec[i+2]
+c
+```
+
+#### 6.d 
+```{r}
+i <- c(1:249)
+```
+#### e's exponents will range from x2 to xn while xi will range from 1 to n-1
+```{r}
+s <- sum(exp(-xVec[i+1])/(xVec[i]+10))
+s
+```
+---
+#7
+---
+
+#### 7.a
+#### Finds the index positions of yVec that are greater than 600 and yVec[] takes each of these index positions and outputs the corresponding value for each
+```{r}
+a <- yVec[yVec > 600]
+a
+```
+#### 7.b
+#### which() gives the indices that have a result of TRUE
+```{r}
+b <- which(yVec > 600)
+b
+```
+#### 7.c
+#### Finds the index positions of yVec that are greater than 600 and xVec[] takes each of these index positions and outputs the corresponding value for each
+```{r}
+c <- xVec[yVec > 600]
+c
+```
+
+#### 7.d
+#### Takes the square root of the absolute value of each difference of the components of xVec and the mean of xVec. xVec by itself just outputs x1, x2, .., xns
+```{r}
+d <- sqrt(abs(xVec-mean(xVec)))
+d
+```
+#### 7.e 
+#### The inequality inside finds the values of yVec that are within 200 of the maximum value including the max itself. sum() will add 1 for each TRUE output of the inequality and 0 for each FALSE.
+```{r}
+e <- sum(yVec > max(yVec) - 200)
+e
+```
+#### 7.f
+#### Each component of xVec will be evaluated with mod2. It will return true if the remainder is 0 (divisible by 2). sum() will add 1 for each TRUE output of the inequality and 0 for each FALSE.
+```{r}
+f <- sum(xVec%%2==0)
+f
+```
+#### 7.g
+#### order() returns a permutation of natural numbers that correspond to the order the original indices need to be in for it to ascend. xVec[] will be sorted in accordance with this order
+```{r}
+g <- xVec[order(yVec)]
+g
+```
+#### 7.h
+#### Collects the elements in yVec at index positions 1,4,7,10,.. by returning true at every 1+3n where n is a natural number
+```{r}
+i <- c(T,F,F)
+h <- yVec[i]
+h
+```
+
+---
+#8
+---
+#### 8
+#### cumprod() returns the cumulative product of the elements in argument
+```{r}
+1 + sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2)))
+```
