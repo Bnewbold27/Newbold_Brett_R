@@ -25,7 +25,7 @@ x3 <- c(1:20,19:1)
 x3
 ```
 #### 1.d
-#### Creates the vector (4,6,3) and assigns to name tmp
+#### Creates the vector (4,6,3) and assigns it to the name tmp
 ```{r}
 tmp <- c(4,6,3)
 tmp
@@ -37,7 +37,7 @@ x4 <- rep(tmp, times = 10)
 x4
 ```
 #### 1.f 
-#### Repeats the vector until the desired length (31) occurs
+#### Repeats the vector until the desired length of 31 occurs
 ```{r}
 x5 <- rep_len(tmp, 31)  
 x5
@@ -52,12 +52,9 @@ x6
 #2
 ---
 
-#### seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1
+#### seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1, then we create a vector (f) by inputting each value of the vector x into the function
 ```{r}
 x <- seq(3, 6, by = .1)
-```
-#### Creates a vector (f) for each value in the vector x inputted into the function
-```{r}
 f <- exp(x)*cos(x)
 f
 ```
@@ -113,7 +110,6 @@ fns <- paste("fn", c(1:30), sep = "")
 fns
 ```
 
-
 ---
 #6
 ---
@@ -143,7 +139,7 @@ b <- sin(yVec[i])/cos(xVec[i+1])
 b
 ```
 #### 6.c
-#### Needed to shrink the i's by one to account for i+2 ending at 250
+#### Needed to shrink the i's to account for i+2 ending at 250
 ```{r}
 i <- c(1:248)
 c <- xVec[i] + 2*xVec[i+1] - xVec[i+2]
@@ -179,7 +175,7 @@ c
 ```
 
 #### 7.d
-#### Takes the square root of the absolute value of each difference of the components of xVec and the mean of xVec. xVec by itself just outputs x1, x2, .., xns
+#### Takes the square root of the absolute value of each difference of the components of xVec and the mean of xVec. xVec by itself just outputs x1, x2, .., xn
 ```{r}
 d <- sqrt(abs(xVec-mean(xVec)))
 d

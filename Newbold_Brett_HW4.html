@@ -150,8 +150,8 @@ x3</code></pre>
 <div id="d" class="section level4">
 <h4>1.d</h4>
 </div>
-<div id="creates-the-vector-463-and-assigns-to-name-tmp" class="section level4">
-<h4>Creates the vector (4,6,3) and assigns to name tmp</h4>
+<div id="creates-the-vector-463-and-assigns-it-to-the-name-tmp" class="section level4">
+<h4>Creates the vector (4,6,3) and assigns it to the name tmp</h4>
 <pre class="r"><code>tmp &lt;- c(4,6,3)
 tmp</code></pre>
 <pre><code>## [1] 4 6 3</code></pre>
@@ -168,8 +168,8 @@ x4</code></pre>
 <div id="f" class="section level4">
 <h4>1.f</h4>
 </div>
-<div id="repeats-the-vector-until-the-desired-length-31-occurs" class="section level4">
-<h4>Repeats the vector until the desired length (31) occurs</h4>
+<div id="repeats-the-vector-until-the-desired-length-of-31-occurs" class="section level4">
+<h4>Repeats the vector until the desired length of 31 occurs</h4>
 <pre class="r"><code>x5 &lt;- rep_len(tmp, 31)  
 x5</code></pre>
 <pre><code>##  [1] 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4 6 3 4</code></pre>
@@ -184,13 +184,10 @@ x6</code></pre>
 <pre><code>##  [1] 4 4 4 4 4 4 4 4 4 4 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 3 3 3 3 3
 ## [36] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</code></pre>
 </div>
-<div id="seq-returns-a-vector-x-using-its-numeric-arguments-from-3-to-6-in-increments-of-.1" class="section level4">
-<h4>seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1</h4>
-<pre class="r"><code>x &lt;- seq(3, 6, by = .1)</code></pre>
-</div>
-<div id="creates-a-vector-f-for-each-value-in-the-vector-x-inputted-into-the-function" class="section level4">
-<h4>Creates a vector (f) for each value in the vector x inputted into the function</h4>
-<pre class="r"><code>f &lt;- exp(x)*cos(x)
+<div id="seq-returns-a-vector-x-using-its-numeric-arguments-from-3-to-6-in-increments-of-.1-then-we-create-a-vector-f-by-inputting-each-value-of-the-vector-x-into-the-function" class="section level4">
+<h4>seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1, then we create a vector (f) by inputting each value of the vector x into the function</h4>
+<pre class="r"><code>x &lt;- seq(3, 6, by = .1)
+f &lt;- exp(x)*cos(x)
 f</code></pre>
 <pre><code>##  [1] -19.884531 -22.178753 -24.490697 -26.773182 -28.969238 -31.011186
 ##  [7] -32.819775 -34.303360 -35.357194 -35.862834 -35.687732 -34.685042
@@ -365,8 +362,8 @@ b</code></pre>
 <div id="c-1" class="section level4">
 <h4>6.c</h4>
 </div>
-<div id="needed-to-shrink-the-is-by-one-to-account-for-i2-ending-at-250" class="section level4">
-<h4>Needed to shrink the i’s by one to account for i+2 ending at 250</h4>
+<div id="needed-to-shrink-the-is-to-account-for-i2-ending-at-250" class="section level4">
+<h4>Needed to shrink the i’s to account for i+2 ending at 250</h4>
 <pre class="r"><code>i &lt;- c(1:248)
 c &lt;- xVec[i] + 2*xVec[i+1] - xVec[i+2]
 c</code></pre>
@@ -447,8 +444,8 @@ c</code></pre>
 <div id="d-2" class="section level4">
 <h4>7.d</h4>
 </div>
-<div id="takes-the-square-root-of-the-absolute-value-of-each-difference-of-the-components-of-xvec-and-the-mean-of-xvec.-xvec-by-itself-just-outputs-x1-x2-..-xns" class="section level4">
-<h4>Takes the square root of the absolute value of each difference of the components of xVec and the mean of xVec. xVec by itself just outputs x1, x2, .., xns</h4>
+<div id="takes-the-square-root-of-the-absolute-value-of-each-difference-of-the-components-of-xvec-and-the-mean-of-xvec.-xvec-by-itself-just-outputs-x1-x2-..-xn" class="section level4">
+<h4>Takes the square root of the absolute value of each difference of the components of xVec and the mean of xVec. xVec by itself just outputs x1, x2, .., xn</h4>
 <pre class="r"><code>d &lt;- sqrt(abs(xVec-mean(xVec)))
 d</code></pre>
 <pre><code>##   [1] 16.0044994  3.8543482 15.8699716 17.7522956  7.8194629 20.1954450
