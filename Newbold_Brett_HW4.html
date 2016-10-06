@@ -184,11 +184,8 @@ x6</code></pre>
 <pre><code>##  [1] 4 4 4 4 4 4 4 4 4 4 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 3 3 3 3 3
 ## [36] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</code></pre>
 </div>
-<div id="creates-a-vector-x-from-3-to-6-in-increments-of-.1" class="section level4">
-<h4>Creates a vector (x) from 3 to 6 in increments of .1</h4>
-</div>
-<div id="seq-for-numeric-arguments-returns-a-vector" class="section level4">
-<h4>seq() for numeric arguments returns a vector</h4>
+<div id="seq-returns-a-vector-x-using-its-numeric-arguments-from-3-to-6-in-increments-of-.1" class="section level4">
+<h4>seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1</h4>
 <pre class="r"><code>x &lt;- seq(3, 6, by = .1)</code></pre>
 </div>
 <div id="creates-a-vector-f-for-each-value-in-the-vector-x-inputted-into-the-function" class="section level4">
@@ -202,6 +199,9 @@ f</code></pre>
 ## [25] 140.525075 173.405776 209.733494 249.468441 292.486707 338.564378
 ## [31] 387.360340</code></pre>
 </div>
+<div id="a-1" class="section level4">
+<h4>3.a</h4>
+</div>
 <div id="creates-a-vector-x1-where-each-entry-is-found-by-the-product" class="section level4">
 <h4>Creates a vector (x1) where each entry is found by the product</h4>
 <pre class="r"><code>x1 &lt;- (.1 ^ seq(3, 36, by=3))*(.2 ^ seq(1, 34, by=3))
@@ -209,6 +209,9 @@ x1</code></pre>
 <pre><code>##  [1] 2.000000e-04 1.600000e-09 1.280000e-14 1.024000e-19 8.192000e-25
 ##  [6] 6.553600e-30 5.242880e-35 4.194304e-40 3.355443e-45 2.684355e-50
 ## [11] 2.147484e-55 1.717987e-60</code></pre>
+</div>
+<div id="b-1" class="section level4">
+<h4>3.b</h4>
 </div>
 <div id="creates-a-vector-x2-using-seq-and-the-default-by1" class="section level4">
 <h4>Creates a vector (x2) using seq() and the default by=1</h4>
@@ -220,33 +223,27 @@ x2</code></pre>
 ## [16] 4.096000e+03 7.710118e+03 1.456356e+04 2.759411e+04 5.242880e+04
 ## [21] 9.986438e+04 1.906502e+05 3.647221e+05 6.990507e+05 1.342177e+06</code></pre>
 </div>
-<div id="a-1" class="section level4">
+<div id="a-2" class="section level4">
 <h4>4.a</h4>
-</div>
-<div id="creates-the-vector-12399100" class="section level4">
-<h4>Creates the vector (1,2,3,…,99,100)</h4>
-<pre class="r"><code>i &lt;- c(10:100)</code></pre>
 </div>
 <div id="returns-the-sum-of-all-the-values-as-i-ascends-from-10-to-100" class="section level4">
 <h4>Returns the sum of all the values as i ascends from 10 to 100</h4>
-<pre class="r"><code>s &lt;- sum(i^3 + 4*i^2)
+<pre class="r"><code>i &lt;- c(10:100)
+s &lt;- sum(i^3 + 4*i^2)
 s</code></pre>
 <pre><code>## [1] 26852735</code></pre>
 </div>
-<div id="b-1" class="section level4">
+<div id="b-2" class="section level4">
 <h4>4.b</h4>
-</div>
-<div id="creates-the-vector-1232425" class="section level4">
-<h4>Creates the vector (1,2,3,…,24,25)</h4>
-<pre class="r"><code>i &lt;- c(1:25)</code></pre>
 </div>
 <div id="returns-the-sum-of-all-the-values-as-i-ascends-from-1-to-25" class="section level4">
 <h4>Returns the sum of all the values as i ascends from 1 to 25</h4>
-<pre class="r"><code>s &lt;- sum((2^i)/i + (3^i)/(i^2))
+<pre class="r"><code>i &lt;- c(1:25)
+s &lt;- sum((2^i)/i + (3^i)/(i^2))
 s</code></pre>
 <pre><code>## [1] 2129170437</code></pre>
 </div>
-<div id="a-2" class="section level4">
+<div id="a-3" class="section level4">
 <h4>5.a</h4>
 </div>
 <div id="concatenates-label-term-by-term-with-the-vector-argument-to-create-a-character-vector-result-sep-one-space-is-the-default-so-i-wont-need-to-include-it" class="section level4">
@@ -259,7 +256,7 @@ labels</code></pre>
 ## [19] &quot;label 19&quot; &quot;label 20&quot; &quot;label 21&quot; &quot;label 22&quot; &quot;label 23&quot; &quot;label 24&quot;
 ## [25] &quot;label 25&quot; &quot;label 26&quot; &quot;label 27&quot; &quot;label 28&quot; &quot;label 29&quot; &quot;label 30&quot;</code></pre>
 </div>
-<div id="b-2" class="section level4">
+<div id="b-3" class="section level4">
 <h4>5.b</h4>
 </div>
 <div id="concatenates-fn-term-by-term-with-the-vector-argument-to-create-a-character-vector-result-sep-with-leave-no-space-between-fn-and-the-integers" class="section level4">
@@ -279,16 +276,13 @@ fns</code></pre>
 <pre class="r"><code>xVec &lt;- sample(0:999, 250, replace=T) 
 yVec &lt;- sample(0:999, 250, replace=T)</code></pre>
 </div>
-<div id="a-3" class="section level4">
+<div id="a-4" class="section level4">
 <h4>6.a</h4>
-</div>
-<div id="will-need-these-numbers-for-our-new-vectors" class="section level4">
-<h4>Will need these numbers for our new vectors</h4>
-<pre class="r"><code>i &lt;- c(1:249)</code></pre>
 </div>
 <div id="creates-a-vector-by-taking-the-difference-of-each-component-of-y-and-x-making-sure-y-components-are-one-step-ahead" class="section level4">
 <h4>Creates a vector by taking the difference of each component of y and x, making sure y components are “one step ahead”</h4>
-<pre class="r"><code>a &lt;- yVec[i+1] - xVec[i]
+<pre class="r"><code>i &lt;- c(1:249)
+a &lt;- yVec[i+1] - xVec[i]
 a</code></pre>
 <pre><code>##   [1]  163 -122  317 -146  417  393  249 -489  741  771   81  402 -549  338
 ##  [15]  583 -403  -67  217  307 -121 -269   36 -706 -563  102   48  397  297
@@ -309,13 +303,13 @@ a</code></pre>
 ## [225]  923  353 -579  225  327  410  568 -195  -83  154 -486 -195  667 -144
 ## [239]  272  410  546  380 -559  414  674  193  222  -92  553</code></pre>
 </div>
-<div id="b-3" class="section level4">
+<div id="b-4" class="section level4">
 <h4>6.b</h4>
-<pre class="r"><code>i &lt;- c(1:249)</code></pre>
 </div>
 <div id="same-process-as-part-a.-cos-will-be-one-ahead-the-whole-time-until-it-reaches-the-last-entry-of-xvec" class="section level4">
 <h4>Same process as part a. cos() will be one ahead the whole time until it reaches the last entry of xVec</h4>
-<pre class="r"><code>b &lt;- sin(yVec[i])/cos(xVec[i+1])
+<pre class="r"><code>i &lt;- c(1:249)
+b &lt;- sin(yVec[i])/cos(xVec[i+1])
 b</code></pre>
 <pre><code>##   [1]   0.88603405  -1.44184825   0.82807258  -1.61591717  -0.86017343
 ##   [6]  20.26356465  -0.79930406   1.72414444  -0.08094240  -0.74895634
@@ -370,11 +364,11 @@ b</code></pre>
 </div>
 <div id="c-1" class="section level4">
 <h4>6.c</h4>
-<pre class="r"><code>i &lt;- c(1:248)</code></pre>
 </div>
 <div id="needed-to-shrink-the-is-by-one-to-account-for-i2-ending-at-250" class="section level4">
 <h4>Needed to shrink the i’s by one to account for i+2 ending at 250</h4>
-<pre class="r"><code>c &lt;- xVec[i] + 2*xVec[i+1] - xVec[i+2]
+<pre class="r"><code>i &lt;- c(1:248)
+c &lt;- xVec[i] + 2*xVec[i+1] - xVec[i+2]
 c</code></pre>
 <pre><code>##   [1] 1382   70 1221 1749  -98  796 1949  623 -134  618  288 1472  517  -45
 ##  [15]  794 1982 1489  344 -206 1207  292  771 2085  810 1032 1547  767  537
@@ -397,15 +391,15 @@ c</code></pre>
 </div>
 <div id="d-1" class="section level4">
 <h4>6.d</h4>
-<pre class="r"><code>i &lt;- c(1:249)</code></pre>
 </div>
 <div id="es-exponents-will-range-from-x2-to-xn-while-xi-will-range-from-1-to-n-1" class="section level4">
 <h4>e’s exponents will range from x2 to xn while xi will range from 1 to n-1</h4>
-<pre class="r"><code>s &lt;- sum(exp(-xVec[i+1])/(xVec[i]+10))
+<pre class="r"><code>i &lt;- c(1:249)
+s &lt;- sum(exp(-xVec[i+1])/(xVec[i]+10))
 s</code></pre>
 <pre><code>## [1] 0.01269872</code></pre>
 </div>
-<div id="a-4" class="section level4">
+<div id="a-5" class="section level4">
 <h4>7.a</h4>
 </div>
 <div id="finds-the-index-positions-of-yvec-that-are-greater-than-600-and-yvec-takes-each-of-these-index-positions-and-outputs-the-corresponding-value-for-each" class="section level4">
@@ -420,7 +414,7 @@ a</code></pre>
 ##  [86] 841 645 681 827 884 890 970 632 717 846 952 609 824 695 675 777 813
 ## [103] 792 783 611 853 738 668 791</code></pre>
 </div>
-<div id="b-4" class="section level4">
+<div id="b-5" class="section level4">
 <h4>7.b</h4>
 </div>
 <div id="which-gives-the-indices-that-have-a-result-of-true" class="section level4">

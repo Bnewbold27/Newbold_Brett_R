@@ -52,8 +52,7 @@ x6
 #2
 ---
 
-#### Creates a vector (x) from 3 to 6 in increments of .1
-#### seq() for numeric arguments returns a vector
+#### seq() returns a vector (x) using its numeric arguments from 3 to 6 in increments of .1
 ```{r}
 x <- seq(3, 6, by = .1)
 ```
@@ -66,12 +65,13 @@ f
 ---
 #3
 ---
-
+#### 3.a
 #### Creates a vector (x1) where each entry is found by the product 
 ```{r}
 x1 <- (.1 ^ seq(3, 36, by=3))*(.2 ^ seq(1, 34, by=3))
 x1
 ```
+#### 3.b
 #### Creates a vector (x2) using seq() and the default by=1
 ```{r}
 x2 <- 2^seq(1,25)/seq(1,25)
@@ -82,22 +82,16 @@ x2
 ---
 
 #### 4.a
-#### Creates the vector (1,2,3,...,99,100) 
-```{r}
-i <- c(10:100)
-```
 #### Returns the sum of all the values as i ascends from 10 to 100
 ```{r}
+i <- c(10:100)
 s <- sum(i^3 + 4*i^2)
 s
 ```
 #### 4.b
-#### Creates the vector (1,2,3,...,24,25)
-```{r}
-i <- c(1:25)
-```
 #### Returns the sum of all the values as i ascends from 1 to 25
 ```{r}
+i <- c(1:25)
 s <- sum((2^i)/i + (3^i)/(i^2))
 s
 ```
@@ -135,39 +129,30 @@ yVec <- sample(0:999, 250, replace=T)
 ```
 
 #### 6.a
-#### Will need these numbers for our new vectors
-```{r}
-i <- c(1:249)
-```
 #### Creates a vector by taking the difference of each component of y and x, making sure y components are "one step ahead" 
 ```{r}
+i <- c(1:249)
 a <- yVec[i+1] - xVec[i]
 a
 ```
 #### 6.b
-```{r}
-i <- c(1:249)
-```
 #### Same process as part a. cos()  will be one ahead the whole time until it reaches the last entry of xVec
 ```{r}
+i <- c(1:249)
 b <- sin(yVec[i])/cos(xVec[i+1])
 b
 ```
 #### 6.c
-```{r}
-i <- c(1:248)
-```
 #### Needed to shrink the i's by one to account for i+2 ending at 250
 ```{r}
+i <- c(1:248)
 c <- xVec[i] + 2*xVec[i+1] - xVec[i+2]
 c
 ```
 #### 6.d 
-```{r}
-i <- c(1:249)
-```
 #### e's exponents will range from x2 to xn while xi will range from 1 to n-1
 ```{r}
+i <- c(1:249)
 s <- sum(exp(-xVec[i+1])/(xVec[i]+10))
 s
 ```
