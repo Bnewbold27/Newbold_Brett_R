@@ -76,7 +76,6 @@ x2
 ---
 #4
 ---
-
 #### 4.a
 #### Returns the sum of all the values as i ascends from 10 to 100
 ```{r}
