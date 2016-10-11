@@ -11,7 +11,7 @@ require(ggplot2)
 methods(class = "data.frame")
 
 # Only wanted to print the first ten row names so we can see column names on the 
-# console as part of the attritbutes
+# console as part of the attritbutes.
 attributes(diamonds[1:10,])
 ncol(diamonds)
 
