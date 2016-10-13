@@ -19,14 +19,14 @@ Df_Info <- function(x)
   #  all methods and attributes of the data frame 
   
   #  bn-2016
-{
-  methods(class = x)   # Will be the same for any data frame
-  attributes(x)
-}
+  {
+    methods(class = x)   # Will be the same for any data frame
+    attributes(x)
+  }
 
 data("diamonds")
-Df_Info(diamonds[1:10,]) # Only wanted to print the first ten row names so we can see column names on the
-# console as part of the attritbutes.
+Df_Info(diamonds[1:10,])  # Only wanted to print the first ten row names so we can see column names on the
+                          # console as part of the attritbutes.
 
 
 Column_Num <- function(x)
@@ -39,9 +39,9 @@ Column_Num <- function(x)
   #  the number of columns in a dataFrame 
   
   #  bn-2016
-{
-  ncol(x)
-}
+  {
+    ncol(x)
+  }
 
 data("diamonds")
 Column_Num(diamonds)
@@ -128,8 +128,8 @@ Column_Type(diamonds)
     
     #  bn-2016
   {
-    numeric_cols <- x[sapply(x, is.numeric)]   # sapply() uses "is.numeric" to find the columns of diamonds that are numeric
-    colMeans(numeric_cols)    # colMeans() forms the mean of each numeric column found in diamonds
+    numeric_cols <- x[sapply(x, is.numeric)]   # sapply() uses "is.numeric" to find the columns of dataFrame that are numeric
+    colMeans(numeric_cols)    # colMeans() forms the mean of each numeric column found in dataFrame
   }
 
 data("diamonds")
@@ -151,8 +151,8 @@ Column_Means(diamonds)
     
     #  bn-2016
   {
-    fctr_cols <- x[sapply(x, is.factor)]   # sapply() will reveal which columns in x are factor columns. 
-    # x[] outputs those column that are TRUE. 
+    fctr_cols <- x[sapply(x, is.factor)]   #  sapply() will reveal which columns in x are factor columns. 
+                                           #  x[] outputs those column that are TRUE. 
     summary(fctr_cols)   # summary() will create a frequency table because factors are being passed through
   }
 
@@ -177,11 +177,11 @@ Freq_Table(diamonds)
     #  bn-2016
   {
     sum(rowSums(is.na(x))==ncol(x))   # is.na() will create logical vectors for each entry in the dataframe, rowSums
-    # will reveal which rows have an equal amount of missing values as they do
-    # columns. sum() will then add the TRUEs from rowSums
+                                      # will reveal which rows have an equal amount of missing values as they do
+                                      # columns. sum() will then add the TRUEs from rowSums
     
     N <- nrow(x) - nrow(na.omit(x))   # To find the number of rows containing an NA in any of the columns I took nrow()
-    # (total number of rows) and subtracted nrow(na.omit()) (the amount of rows without NAs) 
+                                      # (total number of rows) and subtracted nrow(na.omit()) (the amount of rows without NAs) 
     
     print(paste(N, "row(s) contain NA in each column"))
     
@@ -238,9 +238,9 @@ NA_summary(A)
       m <- cor(y, method = "pearson")   # Creates the correlation coefficients between the columns of y as a matrix
       
       correlation <- m[which(lower.tri(m))]  # We only need the entries from the lower or upper triangular, choose lower 
-      # because their order corresponds to the strings created earlier. 
-      # which() tells us the index values of the lower triangular andcorrespond 
-      # to the order of the strings. m[] then outputs the values in that order
+                                             # because their order corresponds to the strings created earlier. 
+                                             # which() tells us the index values of the lower triangular andcorrespond 
+                                             # to the order of the strings. m[] then outputs the values in that order
       
       new_df <- data.frame(pairs, correlation)   # Putting together the pieces for the new data frame
       return(new_df)
