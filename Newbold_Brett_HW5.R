@@ -176,14 +176,14 @@ NA_summary <- function(x)
     
     #  bn-2016
   {
-    sum(rowSums(is.na(x))==ncol(x))   # is.na() will create logical vectors for each entry in the dataframe, rowSums
-    # will reveal which rows have an equal amount of missing values as they do
-    # columns. sum() will then add the TRUEs from rowSums
+    Y <- sum(rowSums(is.na(x))==ncol(x))   # is.na() will create logical vectors for each entry in the dataframe, rowSums
+                                           # will reveal which rows have an equal amount of missing values as they do
+                                           # columns. sum() will then add the TRUEs from rowSums
     
     N <- nrow(x) - nrow(na.omit(x))   # To find the number of rows containing an NA in any of the columns I took nrow()
-    # (total number of rows) and subtracted nrow(na.omit()) (the amount of rows without NAs) 
+                                      # (total number of rows) and subtracted nrow(na.omit()) (the amount of rows without NAs) 
     
-    print(paste(N, "row(s) contain NA in each column"))
+    print(paste(Y, "row(s) contain NA in each column"))
     
     paste(100*(N / nrow(x)), sep = "", "% of the rows contain NA in at least one column")
   }
