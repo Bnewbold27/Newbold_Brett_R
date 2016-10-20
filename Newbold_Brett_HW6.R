@@ -42,7 +42,7 @@
 ---
   
   plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight (carat) and price using log
-                                                          # This creates linearity in our scatter plot
+                                                            # This creates linearity in our scatter plot
   geom_point(aes(colour = factor(color)), size =.8) +   # Creates scatterplot with various colors for each factor in "color" column 
                                                         # of diamonds
     xlab("Weight") +   # Labeling x-axis
@@ -101,7 +101,7 @@
     
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   
-  main <- ggplot(diamonds, aes(x=log(carat), y=r)) +  # # Uses the residuals on the y-axis and transformed weight on x-axis
+  main <- ggplot(diamonds, aes(x=log(carat), y=r)) +  # Uses the residuals on the y-axis and transformed weight on x-axis
     geom_point(aes(colour = factor(color)), size = .7) +   # Creates scatterplot with various colors for each factor in "color" 
                                                            # column of diamonds
     xlab("Weight") +   # Labeling x-axis
@@ -145,7 +145,7 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     ) 
   
-  subvp1 <- viewport(width=.4,height=.2,x=.275,y=.19) # Creating viewport with specific areas and locations
+  subvp1 <- viewport(width=.4,height=.2,x=.275,y=.19) # Creating viewports with specific areas and locations
   subvp2 <- viewport(width=.4,height=.2,x=.788,y=.73)
   main # Displays the main plot in RStudio
   print(p1, vp=subvp1) # Displays first density histogram in RStudio
