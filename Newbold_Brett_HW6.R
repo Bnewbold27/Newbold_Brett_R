@@ -129,7 +129,7 @@
       axis.title = element_blank(), # Stripping the titles on the axes
       axis.text = element_text(color = "gray58", size=5), # Smaller and lighter text on axes
       axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
-      plot.margin=unit(c(0,0,0,0),"mm"), # Removing surrounding whitespace
+      plot.margin = unit(c(0,0,0,0),"mm"), # Removing surrounding whitespace
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
   
