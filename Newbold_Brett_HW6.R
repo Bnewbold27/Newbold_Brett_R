@@ -121,9 +121,9 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
   
-  p1 <- ggplot(diamonds, aes(price, ..density.., fill=color)) + # Using density on the y axis, price for x axis,
+  p1 <- ggplot(diamonds, aes(price, ..density..)) + # Using density on the y axis, price for x axis,
                                                                 # and stacking the variable color from diamonds
-    geom_histogram(binwidth = 90) + # Making plot a histogram with specific binwidth
+    geom_histogram(aes(colour = factor(color)), binwidth = 50) + # Making plot a histogram with specific binwidth
     theme(
       legend.position = "none", # Making the legend disappear 
       axis.title = element_blank(), # Stripping the titles on the axes
@@ -133,9 +133,9 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
   
-  p2 <- ggplot(diamonds, aes(carat, ..density.., fill=clarity)) + # Using density on the y axis, carat for the x
+  p2 <- ggplot(diamonds, aes(carat, ..density..)) + # Using density on the y axis, carat for the x
                                                                   # axis, and stacking the variable clarity from diamonds
-    geom_histogram(binwidth = .08) + # Making plot a histogram with specific binwidth 
+    geom_histogram(aes(colour = factor(color)), binwidth = .0287) + # Making plot a histogram with specific binwidth 
     theme(
       legend.position="none", # Making the legend disappear
       axis.title = element_blank(), # Stripping the titles on the axes
