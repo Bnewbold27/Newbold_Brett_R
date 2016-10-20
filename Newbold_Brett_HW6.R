@@ -27,14 +27,14 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
 
-plot2 # Display the plot in R
+  plot2 # Display the plot in R
 
-# I wanted to give the option to display the plot as it appears in the homework. Creating a PDF allowed me to 
-# duplicate the examples as best as I could because displying in RStudio is dependent on the dimensions of the
-# user's plot window
+  # I wanted to give the option to display the plot as it appears in the homework. Creating a PDF allowed me to 
+  # duplicate the examples as best as I could because displying in RStudio is dependent on the dimensions of the
+  # user's plot window
 
-ggsave("plot2.pdf", plot13, width = 6.8, height = 4.7) # Save plot as PDF with ideal dimensions
-system('open "plot2.pdf"') # Open PDF
+  ggsave("plot2.pdf", plot2, width = 6.8, height = 4.7) # Save plot as PDF with ideal dimensions
+  system('open "plot2.pdf"') # Open PDF
 
 
 
@@ -42,23 +42,23 @@ system('open "plot2.pdf"') # Open PDF
   3. Remove the non-linearity and replot
 ---
   
-plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight (carat) and price using log
+  plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight (carat) and price using log
                                                           # This creates linearity in our scatter plot
   geom_point(aes(colour = factor(color)), size =.8) +   # Creates scatterplot with various colors for each factor in "color" column of diamonds
-  xlab("Weight") +   # Labeling x-axis
-  ylab("Price") +    # Labeling y-axis
-  ggtitle("Diamonds - Weight to Price (Linear)") +   # Labeling the title
-  theme(
-    # Making the title of the plot blue, larger font, and closer to plot
-    plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)),
-    axis.title = element_text(size=8.5), # Smaller titles for the axes 
-    axis.text = element_text(color = "gray58", size=6.8), # Smaller and lighter text on axes
-    axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
-    legend.title = element_text(size=7, face = "bold"), # Smaller yet bolder title for legend
-    legend.text = element_text(size=6.5), # Smaller text inside legend
-    plot.margin = unit(c(7,4,3,4),"mm"), # Creating more surrounding whitespace
-    panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
-  )
+    xlab("Weight") +   # Labeling x-axis
+    ylab("Price") +    # Labeling y-axis
+    ggtitle("Diamonds - Weight to Price (Linear)") +   # Labeling the title
+    theme(
+      # Making the title of the plot blue, larger font, and closer to plot
+      plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)),
+      axis.title = element_text(size=8.5), # Smaller titles for the axes 
+      axis.text = element_text(color = "gray58", size=6.8), # Smaller and lighter text on axes
+      axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
+      legend.title = element_text(size=7, face = "bold"), # Smaller yet bolder title for legend
+      legend.text = element_text(size=6.5), # Smaller text inside legend
+      plot.margin = unit(c(7,4,3,4),"mm"), # Creating more surrounding whitespace
+      panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
+    )
 
   plot3 # Display in window
   ggsave("plot3.pdf", plot3, width = 6.8, height = 4.7) # Saving with ideal dimensions
@@ -67,6 +67,7 @@ plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight 
 ---
   4. Remove the linear trend
 ---
+    
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   
   plot4 <- ggplot(diamonds, aes(x=log(carat), y=r)) + # Uses the residuals on the y-axis and transformed weight on x-axis
@@ -89,8 +90,8 @@ plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight 
   
   plot4 # Display in window  
   
-  ggsave("plot4.pdf", plot4, width = 6.8, height = 4.7)
-  system('open "plot4.pdf"')
+  ggsave("plot4.pdf", plot4, width = 6.8, height = 4.7) # Save PDF
+  system('open "plot4.pdf"') # Open PDF
   
 ---
     5. Use the grid package to create an overlay of density histograms of price and carat with the previous.
@@ -147,10 +148,9 @@ plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight 
   print(p1, vp=subvp1) # Displays first density histogram in RStudio
   print(p2, vp=subvp2) # Displays second density histogram in RStudio
   
-  pdf("plot22.pdf", width = 6.8, height = 4.7); # Creating one PDF of the plots to eventually open
+  pdf("plot5.pdf", width = 6.8, height = 4.7); # Creating one PDF of the plots to eventually open
   print(main); 
   print(p1, vp=subvp1); 
   print(p2, vp=subvp2);
   dev.off()
-  system('open "plot22.pdf"')
-  
+  system('open "plot5.pdf"')
