@@ -11,13 +11,13 @@
 
   plot2 <- ggplot(diamonds, aes(carat,price)) +   # Begins the plot using the data from diamonds, x-axis is weight, y-axis is price
     geom_point(aes(colour = factor(color)), size = .8) +   # Creates scatterplot with various colors for each factor in 
-    # "color" column of diamonds, decrease the size of each point
+                                                           # "color" column of diamonds, decrease the size of each point
     xlab("Weight") +   # Labeling x-axis
     ylab("Price") +    # Labeling y-axis
     ggtitle("Diamonds - Weight to Price by Color") +   # Labeling the title
     theme(
-      # Making the title of the plot blue, larger font, and closer to plot
-      plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)),
+      plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)), # Making the plot title blue, larger font, 
+                                                                                    # and closer to plot
       axis.title = element_text(size=8.5), # Smaller titles for the axes 
       axis.text = element_text(color = "gray58", size=6.8), # Smaller and lighter text on axes
       axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
@@ -27,7 +27,7 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
 
-  plot2 # Display the plot in R
+  plot2 # Display the plot in RStudio
 
   # I wanted to give the option to display the plot as it appears in the homework. Creating a PDF allowed me to 
   # duplicate the examples as best as I could because displying in RStudio is dependent on the dimensions of the
@@ -37,20 +37,20 @@
   system('open "plot2.pdf"') # Open PDF
 
 
-
 ---
   3. Remove the non-linearity and replot
 ---
   
   plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight (carat) and price using log
                                                           # This creates linearity in our scatter plot
-  geom_point(aes(colour = factor(color)), size =.8) +   # Creates scatterplot with various colors for each factor in "color" column of diamonds
+  geom_point(aes(colour = factor(color)), size =.8) +   # Creates scatterplot with various colors for each factor in "color" column 
+                                                        # of diamonds
     xlab("Weight") +   # Labeling x-axis
     ylab("Price") +    # Labeling y-axis
     ggtitle("Diamonds - Weight to Price (Linear)") +   # Labeling the title
     theme(
-      # Making the title of the plot blue, larger font, and closer to plot
-      plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)),
+      plot.title = element_text(color = "blue", size=17, margin = margin(0,0,4,0)), # Making the plot title blue, larger font, 
+                                                                                    # and closer to plot
       axis.title = element_text(size=8.5), # Smaller titles for the axes 
       axis.text = element_text(color = "gray58", size=6.8), # Smaller and lighter text on axes
       axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
@@ -60,8 +60,9 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
 
-  plot3 # Display in window
-  ggsave("plot3.pdf", plot3, width = 6.8, height = 4.7) # Saving with ideal dimensions
+  plot3 # Display in RStudio window
+  
+  ggsave("plot3.pdf", plot3, width = 6.8, height = 4.7) # Saving PDF with ideal dimensions
   system('open "plot3.pdf"') # Displaying PDF on screen
 
 ---
@@ -71,12 +72,13 @@
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   
   plot4 <- ggplot(diamonds, aes(x=log(carat), y=r)) + # Uses the residuals on the y-axis and transformed weight on x-axis
-    geom_point(aes(colour = factor(color)), size=.7) +   # Creates scatterplot with various colors for each factor in "color" column of diamonds
+    geom_point(aes(colour = factor(color)), size=.7) +   # Creates scatterplot with various colors for each factor in "color" 
+                                                         # column of diamonds
     xlab("Weight") +   # Labeling x-axis
-    ylab("Price Residuals") +    # Labeling y-axis
+    ylab("Price Residuals") +   # Labeling y-axis
     ggtitle("Diamonds - Weight to Price by Color") +   # Labeling the title
     theme(
-      plot.title = element_text(color = "blue", size=13, margin = margin(0,0,4,0)),   # Changing the color of the title
+      plot.title = element_text(color = "blue", size=13, margin = margin(0,0,4,0)), # Changing the color of the title
       axis.title = element_text(size=6.3), # Smaller titles for the axes 
       axis.text = element_text(color = "gray58", size=5), # Smaller and lighter text on axes
       axis.ticks = element_line(color = "gray58"), # Lighter ticks on axes
@@ -88,7 +90,7 @@
       panel.grid.minor = element_line(color = "gray95") # Suddle minor grid lines
     )
   
-  plot4 # Display in window  
+  plot4 # Display in RStudio window  
   
   ggsave("plot4.pdf", plot4, width = 6.8, height = 4.7) # Save PDF
   system('open "plot4.pdf"') # Open PDF
@@ -100,7 +102,8 @@
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   
   main <- ggplot(diamonds, aes(x=log(carat), y=r)) +  # # Uses the residuals on the y-axis and transformed weight on x-axis
-    geom_point(aes(colour = factor(color)), size = .7) +   # Creates scatterplot with various colors for each factor in "color" column of diamonds
+    geom_point(aes(colour = factor(color)), size = .7) +   # Creates scatterplot with various colors for each factor in "color" 
+                                                           # column of diamonds
     xlab("Weight") +   # Labeling x-axis
     ylab("Price Residuals") +    # Labeling y-axis
     ggtitle("Diamonds - Weight to Price by Color") +   # Labeling the title
