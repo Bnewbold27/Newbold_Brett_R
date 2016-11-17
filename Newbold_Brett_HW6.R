@@ -1,13 +1,15 @@
----
-  HW6
----
+##Prof G - Great work!
+
+##Prof G - ---
+##Prof G -   HW6
+##Prof G - ---
 
   require(ggplot2)
   require(grid)
 
----
-  2. Create a simple scatter plot of Weight ("Carat") and Price using Color as a facet.
----
+##Prof G - ---
+##Prof G -   2. Create a simple scatter plot of Weight ("Carat") and Price using Color as a facet.
+##Prof G - ---
 
   plot2 <- ggplot(diamonds, aes(carat,price)) +   # Begins the plot using the data from diamonds, x-axis is weight, y-axis is price
     geom_point(aes(colour = factor(color)), size = .8) +   # Creates scatterplot with various colors for each factor in 
@@ -33,13 +35,14 @@
   # duplicate the examples as best as I could because displying in RStudio is dependent on the dimensions of the
   # user's plot window
 
+  ##Prof G - Nice addition!!
   ggsave("plot2.pdf", plot2, width = 6.8, height = 4.7) # Save plot as PDF with ideal dimensions
   system('open "plot2.pdf"') # Open PDF
 
 
----
-  3. Remove the non-linearity and replot
----
+##Prof G - ---
+##Prof G -   3. Remove the non-linearity and replot
+##Prof G - ---
   
   plot3 <- ggplot(diamonds, aes(log(carat),log(price))) +   # Transforming weight (carat) and price using log
                                                             # This creates linearity in our scatter plot
@@ -65,9 +68,9 @@
   ggsave("plot3.pdf", plot3, width = 6.8, height = 4.7) # Saving PDF with ideal dimensions
   system('open "plot3.pdf"') # Displaying PDF on screen
 
----
-  4. Remove the linear trend
----
+##Prof G - ---
+##Prof G - 4. Remove the linear trend
+##Prof G - ---
     
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   
@@ -95,9 +98,9 @@
   ggsave("plot4.pdf", plot4, width = 6.8, height = 4.7) # Save PDF
   system('open "plot4.pdf"') # Open PDF
   
----
-    5. Use the grid package to create an overlay of density histograms of price and carat with the previous.
----
+##Prof G - ---
+##Prof G - 5. Use the grid package to create an overlay of density histograms of price and carat with the previous.
+##Prof G - ---
     
   r <- resid(lm(log(price)~log(carat), diamonds)) # Creates the residuals of the linear model
   

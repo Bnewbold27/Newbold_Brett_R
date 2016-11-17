@@ -2,7 +2,7 @@
 title: "Newbold_Brett_HW4"
 output: html_document
 ---
-
+##Prof G - Nice work!
 ---
 #1
 ---
@@ -209,6 +209,7 @@ h
 #8
 ---
 #### cumprod() returns the cumulative product of the elements in argument
+##Prof G - Need more explanation here.
 ```{r}
 1 + sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2)))
 ```

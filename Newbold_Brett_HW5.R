@@ -1,11 +1,15 @@
----
-  HW5 
----
+##Prof G - Nice work. The lines with --- had to
+##Prof G - be commented before I could run the
+##Prof G - entire file to check the output.
+
+##Prof G - ---
+##Prof G -   HW5 
+##Prof G - ---
   
----
+##Prof G - ---
   # 1. Print to the console all methods and attributes associated with a dataframe. 
   # Write code to determine the number of columns in a dataframe
----
+##Prof G - ---
   
 require(ggplot2)
 
@@ -47,9 +51,9 @@ data("diamonds")
 Column_Num(diamonds)
 
 
----
+##Prof G - 
   # 2. Write code to determine how many rows are in a dataframe
---- 
+##Prof G -  
   
 Row_Num <- function(x)
     #  This function Row_Num() accepts any dataframe as a parameter
@@ -68,10 +72,10 @@ Row_Num <- function(x)
 data("diamonds")
 Row_Num(diamonds)
 
----
+##Prof G - 
   # 3. Write code to extract the column names from a dataframe and print the
   # names of the columns (one per line) to the console.
----
+##Prof G - 
   
 Column_Names <- function(x)
     #  This function Column_Names() accepts any dataframe as a parameter
@@ -90,10 +94,10 @@ Column_Names <- function(x)
 data("diamonds")
 Column_Names(diamonds)
 
----
+##Prof G - 
   # 4. Write code to determine the type of each column (numeric, factor, logical,
   # etc.). Print the type of each column to the console.
----
+##Prof G - 
   
 Column_Type <- function(x)
     #  This function Column_Type() accepts any dataframe as a parameter
@@ -112,10 +116,10 @@ Column_Type <- function(x)
 data("diamonds")
 Column_Type(diamonds)
 
----
+##Prof G - 
   # 5. Write code that will loop through any dataframe and calculate the mean of
   # every numeric column. Label the output with the name of the column.
----
+##Prof G - 
   
 Column_Means <- function(x)
     #  This function Column_Means() accepts any dataframe as a parameter
@@ -135,10 +139,10 @@ Column_Means <- function(x)
 data("diamonds")
 Column_Means(diamonds)
 
----
+##Prof G - 
   # 6. Write code that will loop through any dataframe and create a frequency table
   # for every factor column. Label the output with the name of the column.
----
+##Prof G - 
   
 Freq_Table <- function(x)
     #  This function Freq_Table() accepts any dataframe as a parameter
@@ -159,11 +163,11 @@ Freq_Table <- function(x)
 data("diamonds")
 Freq_Table(diamonds)
 
----
+##Prof G - 
   # 7. Write code that will loop through any dataframe and determine the number of 
   # rows containing NA (missing value) in EACH column and the percentage of rows
   # containing an NA in ANY of the columns
-  ---
+  ##Prof G - 
   
 NA_summary <- function(x)
     #  This function NA_Summary() accepts any dataframe as a parameter
@@ -205,11 +209,11 @@ print(A)
 NA_summary(A)
 
 
----
+##Prof G - 
   # 8. Create an R function that can accept any dataframe as a parameter and
   # returns a dataframe that contains each pair of column names and their 
   # corresponding Pearson correlation coefficient
----
+##Prof G - 
   
 corCoef <- function(x)
     #  This function corCoef() accepts any dataframe as a parameter and returns a
