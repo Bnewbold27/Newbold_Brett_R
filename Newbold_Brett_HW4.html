@@ -546,8 +546,14 @@ h</code></pre>
 ## [52] 689 881 593 835 398 358 850 791 915 665 167 866 942 320 482 216 488
 ## [69] 681 273 884 970 469 717 127 952 284 695 325 777 792  72 738 791</code></pre>
 </div>
-<div id="cumprod-returns-the-cumulative-product-of-the-elements-in-argument" class="section level4">
-<h4>cumprod() returns the cumulative product of the elements in argument</h4>
+<div id="section" class="section level4">
+<h4>8</h4>
+</div>
+<div id="cumprod-returns-a-vector-as-the-cumulative-product-of-the-elements-of-the-argument" class="section level4">
+<h4>cumprod() returns a vector as the cumulative product of the elements of the argument</h4>
+</div>
+<div id="first-seqseq-will-produce-a-vector-whose-entries-are-the-quotients-of-the-corresponding-values-of-the-sequences-in-our-example-this-will-be-23-45-67-and-so-on-until-19-entries-are-evaluated.-secondly-cumprod-will-return-the-cumulative-product-of-these-entries-so-the-postion-will-correspond-to-how-many-are-being-multiplied.-1st-23-2nd-2345-3rd-234567-and-so-on.-lastly-sum-adds-these-resulting-entries-from-the-vector-produced-by-cumprod---dont-forget-to-add-1-to-this-for-the-cherry-on-top" class="section level4">
+<h4>First, seq()/seq() will produce a vector whose entries are the quotients of the corresponding values of the sequences, in our example this will be 2/3, 4/5, 6/7, and so on until 19 entries are evaluated. Secondly, cumprod() will return the cumulative product of these entries, so the postion will correspond to how many are being multiplied. 1st: 2/3, 2nd: (2/3)(4/5), 3rd: (2/3)(4/5)(6/7), and so on. Lastly, sum() adds these resulting entries from the vector produced by cumprod() - dont forget to add 1 to this for the cherry on top!</h4>
 <pre class="r"><code>1 + sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2)))</code></pre>
 <pre><code>## [1] 6.976346</code></pre>
 </div>
